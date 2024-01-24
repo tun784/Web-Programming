@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Index</title>
+
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+</head>
+<body>
+    <div class="container">
+        <table class="table table-bordered w-75 mx-auto">
+            <tr>
+                <th colspan="2" style="text-align:center; color:white;" class="bg-primary"> THÔNG TIN NHÂN VIÊN</th>
+            </tr>
+            <tr>
+                <td> Mã Nhân Viên </td>
+                <td> @Model.MaNV </td>
+            </tr>
+            <tr>
+                <td> Tên Nhân Viên</td>
+                <td> @Model.TenNV </td>
+            </tr>
+            <tr>
+                <td> Giới Tính </td>
+                <td> @Model.GT </td>
+            </tr>
+            <tr>
+                <td> Hình Nhân Viên </td>
+                <td> <img src="~/Images/@Model.Hinh" class="w-25 rounded" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
