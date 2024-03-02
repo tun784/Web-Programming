@@ -1,0 +1,89 @@
+﻿@using Bai123_Form.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MHXacNhan</title>
+</head>
+<body>
+    <h1> ARE YOU READY YOUR INFORMATION IS CORRECT</h1>
+
+    @{ var info = Session["info"] as Information2;
+    }
+    @if (info != null)
+    {
+        <p>Your Full Name is: <span style="color:red;">@info.FullName</span></p>
+        <p>Your ID Student is: <span style="color:red;">@info.IdStudent</span></p>
+        <p>Your Email is: <span style="color:red;">@info.Email</span></p>
+        <p>Your Photo: <img src="\Assets\Image\@info.FileImage" width="10" /> </p>
+        <p>Your Note is: <span style="color:red;">@info.Note</span></p>
+        <p>
+            We are known by: <span style="color:red;">
+            @{
+        string str = "";
+        if (info.Check1 == true){
+            str = "Television, ";
+        }
+        if (info.Check2 == true){
+            str += "Website, ";
+        }
+        if (info.Check3 == true){
+            str += "NewsPaper, ";
+        }
+        @str;
+
+        string str1 = "";
+        if (info.ChooseWorkTime == "1"){
+            str1 = "Morning (2 - 4 - 6) ";
+        }
+        if (info.ChooseWorkTime == "2"){
+            str1 = "Afternoon (2 - 4 - 6) ";
+        }
+        if (info.ChooseWorkTime == "3"){
+            str1 = "Morning (3 - 5 - 7) ";
+        }
+        if (info.ChooseWorkTime == "4"){
+            str1 = "Afternoon (3 - 5 - 7) ";
+        }
+        @str1;
+            }
+            </span>
+        </p>
+        <p>
+            Select a course: <span style="color:red;">
+                @{
+                    string str2 = "";
+                    if (info.SelectCourse == "1")
+                    {
+                        str2 = "Html CSS Boottrap ";
+                    }
+                    if (info.SelectCourse == "2")
+                    {
+                        str2 = "JavaScript ";
+                    }
+                    if (info.SelectCourse == "3")
+                    {
+                        str2 = "WebForm ";
+                    }
+                    if (info.SelectCourse == "4")
+                    {
+                        str2 = "ASP.Net MVC ";
+                    }
+                    if (info.SelectCourse == "5")
+                    {
+                        str2 = "Web Services ";
+                    }
+                    @str2;
+                }
+            </span>
+        </p>
+
+    }
+    <h3>If your information is incorrect. Please go back @Html.ActionLink("INDEX PAGE", "Index_Data_Annotation");</h3>
+</body>
+</html>
