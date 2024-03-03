@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "Sach", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="container">
+            <h2 style="text-align:center; color:blue; font-weight:bold;"> NHẬP SÁCH VÀO KHO</h2>
+            <label for="id">Mã Sách: </label>
+            <input type="text" id="id" name="txt_id" class="form-control" /> <br />
+            <label for="name">Tên Sách: </label>
+            <input type="text" id="name" name="txt_name" class="form-control" /> <br />
+            <label for="pri">Giá: </label>
+            <input type="text" id="pri" name="txt_pri" class="form-control" /> <br />
+            <label for="pic">Ảnh Sách: </label>
+            <input type="file" id="pic" name="file_avatar" class="form-control" /> <br />
+            <center><input type="submit" value="NHẬP" class="btn btn-primary" /></center>
+        </div>
+    }
+
+</body>
+</html>
