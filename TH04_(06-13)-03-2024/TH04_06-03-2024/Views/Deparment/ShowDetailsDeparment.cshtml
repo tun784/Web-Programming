@@ -1,0 +1,21 @@
+﻿@model TH04_06_03_2024.Models.Deparment
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowDetailsDeparment</title>
+</head>
+<body>
+    <div> 
+        <h2 style="color:blue;">CHI TIET PHONG BAN</h2>
+        <P>MaPB: @Model.DeptID</P>
+        <p>Ten PB: @Model.Name</p>
+        <p> So NV: @ViewBag.SNV</p>
+    </div>
+</body>
+</html>
