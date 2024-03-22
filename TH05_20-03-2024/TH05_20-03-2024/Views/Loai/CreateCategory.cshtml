@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCategory</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("CreateCategory", "Loai", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <center>
+                <table style="border: 1px solid black; width: 500px">
+                    <tr style="background-color: antiquewhite; height: 50px;">
+                        <td colspan="2" align="center"><h2>THÊM ĐIỆN THOẠI MỚI</h2></td>
+                    </tr>
+                    <tr style="height: 50px;">
+                        <td align="center">Mã loại</td>
+                        <td><input type="text" name="txtMaLoai" height="40px" style="width:250px" placeholder="Giá trị" /></td>
+                    </tr>
+                    <tr style="height:50px">
+                        <td align="center"> Tên loại</td>
+                        <td>
+                            <input type="text" name="txtTenLoai" height="40px" style="width:250px" />
+                        </td>
+                    </tr>
+                    <tr style="height:50px">
+                        <td></td>
+                        <td>
+                            <input type="submit" name="btnThem" value="Thêm mới" height="40px" style="width:250px" />
+                            <label style="color:red; font-weight:bold">@ViewBag.ThongBao</label>
+                        </td>
+                    </tr>
+                </table>
+
+                @Html.ActionLink("Go back Category List", "ShowCategory1")
+            </center>
+        }
+    </div>
+</body>
+</html>
