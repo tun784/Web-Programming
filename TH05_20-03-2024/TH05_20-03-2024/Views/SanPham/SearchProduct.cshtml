@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TH05_20_03_2024.Models.SanPham>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchProduct</title>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-outline-success mx-5">@Html.ActionLink("Go back", "ShowProductsBySanPham")</button>
+        <form method="post" action="/SanPham/SearchProduct">
+            <input type="text" name="txt_Search" id="txt_Search" class="form-control mx-auto" placeholder="Search" />
+            <button type="submit" class="btn btn-outline-success mx-5">Search</button>
+        </form>
+        <h2 style="font-weight:bold; color:blue;">TÌM KIẾM SẢN PHẨM</h2>
+        <table class="table table-bordered table-responsive">
+            <tr style="background-color:aquamarine">
+                <th>
+                    @Html.DisplayNameFor(model => model.Masp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tensp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mota)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Maloai)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Masp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tensp)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Hinh)*@
+                        <img src="/Assets/images/@item.Hinh" width="70px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mota)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Maloai)
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>So San Pham: @ViewBag.SL</h3>
+    </div>
+</body>
+</html>
