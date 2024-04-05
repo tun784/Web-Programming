@@ -13,8 +13,7 @@
 <body>
     <h1> ARE YOU READY YOUR INFORMATION IS CORRECT</h1>
 
-    @{ var info = Session["info"] as Information;
-    }
+    @{ var info = Session["info"] as Information;}
     @if (info != null)
     {
         <p>Your Full Name is: <span style="color:red;">@info.FullName</span></p>

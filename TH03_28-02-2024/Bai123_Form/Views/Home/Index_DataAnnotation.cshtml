@@ -18,12 +18,12 @@
     <!-- SB Admin CSS - Include with every page -->
     <link href="/Assets/css/sb-admin.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Index Data Annotation</title>
 </head>
 
 
 <body>
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Index_DataAnnotation", "Home"))
     {
         @Html.ValidationSummary(true)
         <div id="page-wrapper">

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KhoaCNTT")]
+[assembly: AssemblyTitle("Bai3_KhoaCNTT")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KhoaCNTT")]
+[assembly: AssemblyProduct("Bai3_KhoaCNTT")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("eb81388c-e908-4c83-873f-44ef36b1e122")]
+[assembly: Guid("93a08b7f-ff36-4a07-b9db-c6b1dbcab675")]
 
 // Version information for an assembly consists of the following four values:
 //

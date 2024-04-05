@@ -13,7 +13,7 @@ namespace Bai123_Form.Models
         public string FullName;
 
         [Required(ErrorMessage="Yeu cau nhap lai ID")]
-        [StringLength(10, ErrorMessage="Nhap chieu dai khong qua 10 ky so")]
+        [StringLength(15, ErrorMessage="Nhap chieu dai khong qua 15 ky so")]
         public string IdStudent;
 
         [Required(ErrorMessage = "Bat buoc nhap Email")]
@@ -24,5 +24,19 @@ namespace Bai123_Form.Models
         public bool Check1, Check2, Check3;
         [Required(ErrorMessage="Yeu cau chon khoa hoc")]
         public string SelectCourse;
+
+        public Information2()
+        {
+            FullName = "....";
+            IdStudent = "....";
+            Email = "....";
+            FileImage = "....";
+            Note = "....";
+            Check1 = false;
+            Check2 = false;
+            Check3 = false;
+            ChooseWorkTime = "....";
+            SelectCourse = "....";
+        }
     }
 }
