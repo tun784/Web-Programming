@@ -9,8 +9,6 @@ namespace TH07_10_04_2024.Controllers
 {
     public class QLNSController : Controller
     {
-        //
-        // GET: /QLNS/
         QL_NhanSuNEntities db = new QL_NhanSuNEntities();
         public ActionResult ShowDeparments()
         {
