@@ -1,0 +1,32 @@
+﻿@model List<TH09_17_04_2024.Models.Sach>
+@{
+    ViewBag.Title = "SachTheoChuDe";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>@ViewBag.TenChuDe</h2>
+@ViewBag.ThongBao
+<div class="row">
+    @{
+        foreach (var item in Model)
+        {
+            if (item.TenSach.Length > 30)
+            {
+                <div class="col-4">
+                    <img src="/HinhAnhSP/@item.AnhBia" width="90" height="120" /><br />
+                    <p>@item.TenSach.Substring(30)...</p>
+                    <a href="@Url.Action("XemChiTiet", "Sach", new { @ms = item.MaSach } )">Xem chi tiết</a>
+                </div>
+            }
+            else
+            {
+                <div class="col-4">
+                    <img src="/HinhAnhSP/@item.AnhBia" width="90" height="120" /><br />
+                    <p>@item.TenSach</p>
+                    <a href="/Sach/XemChiTiet?ms=@item.MaSach">Xem chi tiết</a>
+                </div>
+            }
+        }
+    }
+</div>
+
