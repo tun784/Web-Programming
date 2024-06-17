@@ -1,0 +1,66 @@
+﻿@model TranMinhKhanh_2033216449_KT2.Models.SanPham
+
+@{
+    ViewBag.Title = "XemChitiet";
+    Layout = "~/Views/Shared/UserLayoutTest.cshtml";
+}
+
+<style>
+    .ChinhSuaLabel {
+        font-size: x-large;
+    }
+</style>
+
+<h2 class="text-primary" style="font-weight: bolder; font-size: xx-large;">Thông tin sản phẩm</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="container-fluid">
+        <div class="row" style="text-align: left !important;">
+            <div class="col-md-4">
+                @*<img src="/HinhAnhSP/@Html.DisplayFor(model => model.AnhBia)" style="width: 100%;" />*@<br />
+                <img src="~/Images_KTL2/@Model.Anh" style="width: 100%;" /><br />
+
+                <br />
+
+                &emsp;&emsp;
+
+                @*<a href="@Url.Action("ThemGioHang", "GioHang", new { @ms = Model.MaSP, @strURL = Request.Url.ToString() })">
+                        <div class="btn btn-primary">
+                            Mua Ngay
+                        </div>
+                    </a>*@
+
+                <a href="@Url.Action("ThemGioHang", "GioHang", new {@ms = Model.MaSP, @strURL = Request.Url.ToString()})">
+                    <div class="btn btn-primary">
+                        Mua Ngay
+                    </div>
+                </a>
+
+                &emsp;&emsp; &emsp;&emsp;
+                <button class="btn btn-primary">Mua tiếp</button>
+            </div>
+            <div class="col-md-8">
+
+                <h5>Tên Sản Phẩm: <label class="ChinhSuaLabel text-primary" style="font-weight: bolder;">@Html.DisplayFor(model => model.TenSP)</label></h5>
+
+                <br />
+
+                <h3>Hãng Điện Thoại: <label class="ChinhSuaLabel text-primary">@Html.DisplayFor(model => model.Loai.TenLoai)</label></h3>
+
+                <br />
+
+                <h3>Mô Tả Kỹ Thuật: <label class="ChinhSuaLabel">@Html.DisplayFor(model => model.MoTa)</label></h3>
+
+                <br />
+
+                <h3>Giá Bán: <label class="ChinhSuaLabel text-danger" style="font-weight: bolder;"> @Html.DisplayFor(model => model.GiaBan) VNĐ</label></h3>
+
+                <br />
+
+                <h3>Số Lượng Còn: <label class="ChinhSuaLabel">@Html.DisplayFor(model => model.SLTon)</label></h3>
+
+            </div>
+        </div>
+    </div>
+}

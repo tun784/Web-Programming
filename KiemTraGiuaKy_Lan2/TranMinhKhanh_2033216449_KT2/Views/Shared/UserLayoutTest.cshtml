@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    @RenderPage("~/Views/Shared/TheHead.cshtml")
+</head>
+<body>
+    <div class="text-center">
+        <!--NAVIGATION-->
+        <!-- <div class="container-fluid"> -->
+        @RenderPage("~/Views/Shared/Header.cshtml")
+
+        @RenderPage("~/Views/Shared/Navigation.cshtml")
+        <!-- </div> -->
+        <!--CONTAIN-->
+        <div class="row">
+            <div class="col col-md-2  card">
+                @Html.Action("DienThoaiPartial", "SanPhamPartial")
+
+                @Html.Action("LapTopPartial", "SanPhamPartial")
+                
+                @Html.Action("PhuKienPartial", "SanPhamPartial")
+
+               
+            </div>
+            <div class="col col-md-8" style="background-color:lavender;">
+                @RenderPage("~/Views/Shared/Banner.cshtml")
+                <div>
+                    @RenderBody()
+
+
+
+
+                </div>
+            </div>
+            <div class="col col-md-2 card">
+                @Html.Action("TinTucPartial", "TinTucPartial")
+
+
+            </div>
+        </div>
+        <!--Footer-->
+        @RenderPage("~/Views/Shared/Footer.cshtml")
+    </div>
+
+</body>
+</html>
+
+

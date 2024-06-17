@@ -1,0 +1,12 @@
+﻿@model IEnumerable<TranMinhKhanh_2033216449_KT2.Models.LoaiTin>
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:red;"><a href="~/TinTucInfo/TinTucInfo" style="text-transform:uppercase; text-decoration:none; color:white; font-weight:bold;">Tin Tức</a></li>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            <a href="@Url.Action("TinTucTheoCD", "TinTuc", new { MLTin = item.MLTin})" style="text-transform:uppercase; text-decoration:none;">
+                @item.TLTin
+            </a>
+        </li>
+    }
+</ul>

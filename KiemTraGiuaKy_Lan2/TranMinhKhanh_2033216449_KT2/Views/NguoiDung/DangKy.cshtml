@@ -1,0 +1,136 @@
+﻿@model TranMinhKhanh_2033216449_KT2.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/UserLayoutTest.cshtml";
+}
+
+<h2>DangKy</h2>
+
+<style>
+    /* Styles for the registration form */
+    .form-horizontal {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        /* Style the labels to align left */
+        .form-group label {
+            text-align: left;
+            display: block;
+            font-weight: bold;
+        }
+
+    /* Style the form fields */
+    input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+
+    /* Style the submit button */
+    .btn-default {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .btn-default:hover {
+            background-color: #0056b3;
+        }
+
+    /* Center align the form */
+    .form-horizontal {
+        text-align: center;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>KhachHang</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.HoTen, "Họ tên KH", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.HoTen)
+            @Html.ValidationMessageFor(model => model.HoTen)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TaiKhoan, "Tên đăng nhập", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.TaiKhoan)
+            @Html.ValidationMessageFor(model => model.TaiKhoan)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, "Mật khẩu", htmlAttributes: new { @class = "control-label" })
+            @Html.PasswordFor(model => model.MatKhau)
+            @Html.ValidationMessageFor(model => model.MatKhau)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, "Nhập lại mật khẩu", htmlAttributes: new { @class = "control-label" })
+            @Html.PasswordFor(model => model.MatKhau)
+            @Html.ValidationMessageFor(model => model.MatKhau)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DienThoai, "Điện thoại", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.DienThoai)
+            @Html.ValidationMessageFor(model => model.DienThoai)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgaySinh, "Ngày sinh", htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(model => model.NgaySinh)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GioiTinh, "Giới tính", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.GioiTinh)
+            @Html.ValidationMessageFor(model => model.GioiTinh)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaChi, "Địa chỉ", htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.DiaChi)
+            @Html.ValidationMessageFor(model => model.DiaChi)
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
