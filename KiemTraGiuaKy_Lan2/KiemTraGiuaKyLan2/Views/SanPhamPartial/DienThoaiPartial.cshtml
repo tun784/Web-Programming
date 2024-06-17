@@ -1,0 +1,11 @@
+﻿@model IEnumerable<KiemTraGiuaKyLan2.Models.Loai>
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:red;"><a href="#" style="text-transform:uppercase; text-decoration:none; color:white; font-weight:bold;">Điện Thoại</a></li>
+    @foreach (var item in Model)
+    {
+        // <li class="list-group-item"><a href="@Url.Action("SanPhamTheoLoai", "SanPham", new { MaLoai = item.MaLoai})" style="text-transform:uppercase; text-decoration:none;">@item.TenLoai</a></li>
+        <li class="list-group-item"><a href="@Url.Action("SanPhamTheoLoai", "SanPham", new { MaLoai = item.MaLoai })" style="text-transform:uppercase; text-decoration:none;">@item.TenLoai</a></li>
+        // <li class="list-group-item"><a href="@Url.Action("SanPhamTheoLoai", "SanPham", new { MaLoai = item.MaLoai})" style="text-transform:uppercase; text-decoration:none;">@item.TenLoai</a></li>
+    }
+
+</ul>   
