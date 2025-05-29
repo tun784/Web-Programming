@@ -1,0 +1,54 @@
+﻿@model List<BanHoa.Controllers.CartItem>
+
+@{
+    ViewData["Title"] = "Your Cart";
+}
+
+<h2>Your Cart</h2>
+
+@if (!Model.Any())
+{
+    <p>Your cart is empty. <a asp-controller="Home" asp-action="Index">Go shopping!</a></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Flower</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Product.Price.ToString("C0")</td>
+                    <td>@item.Quantity</td>
+                    <td>@(item.Product.Price * item.Quantity) đ</td>
+                    <td>
+                        <a asp-action="Remove" asp-route-id="@item.Product.ProductID" class="btn btn-sm btn-danger">
+                            Remove
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                <td>
+                    @Model.Sum(i => i.Product.Price * i.Quantity).ToString("C0")
+                </td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <a asp-action="Clear" class="btn btn-warning">Clear Cart</a>
+    <a asp-controller="Order" asp-action="Checkout" class="btn btn-success">Checkout</a>
+}
